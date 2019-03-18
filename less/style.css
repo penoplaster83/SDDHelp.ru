@@ -1,22 +1,20 @@
 @font-face {
   font-family: 'BeauSans Bold';
   src: url('/fonts/PFBeauSansPro-Bold.eot');
-  src: local('PFBeauSansPro-Bold'), url('PFBeauSansPro-Bold.eot?#iefix') format('embedded-opentype'), url('/fonts/PFBeauSansPro-Bold.woff') format('woff'), url('/fonts/PFBeauSansPro-Bold.ttf') format('truetype');
+  src: local('PFBeauSansPro-Bold'), url('/fonts/PFBeauSansPro-Bold.eot?#iefix') format('embedded-opentype'), url('/fonts/PFBeauSansPro-Bold.woff') format('woff'), url('/fonts/PFBeauSansPro-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
-  font-family: 'PF BeauSans Pro';
-  src: url('PFBeauSansPro-Italic.eot');
-  src: local('PFBeauSansPro-Italic'), url('PFBeauSansPro-Italic.eot?#iefix') format('embedded-opentype'), url('PFBeauSansPro-Italic.woff') format('woff'), url('PFBeauSansPro-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+  font-family: 'BeauSans Thin';
+  src: url('/fonts/PFBeauSansPro-Thin.eot');
+  src: local('PFBeauSansPro-Thin'), url('/fonts/PFBeauSansPro-Thin.eot?#iefix') format('embedded-opentype'), url('/fonts/PFBeauSansPro-Thin.woff') format('woff'), url('/fonts/PFBeauSansPro-Thin.ttf') format('truetype');
+  font-style: normal;
 }
 @font-face {
-  font-family: 'PF BeauSans Pro';
-  src: url('PFBeauSansPro-Thin.eot');
-  src: local('PFBeauSansPro-Thin'), url('PFBeauSansPro-Thin.eot?#iefix') format('embedded-opentype'), url('PFBeauSansPro-Thin.woff') format('woff'), url('PFBeauSansPro-Thin.ttf') format('truetype');
-  font-weight: 100;
+  font-family: 'BeauSans XThin';
+  src: url('/fonts/PFBeauSansPro-XThin.eot');
+  src: local('PFBeauSansPro-XThin'), url('/fonts/PFBeauSansPro-XThin.eot?#iefix') format('embedded-opentype'), url('/fonts/PFBeauSansPro-XThin.woff') format('woff'), url('/fonts/PFBeauSansPro-XThin.ttf') format('truetype');
   font-style: normal;
 }
 @font-face {
@@ -87,6 +85,16 @@
   font-weight: bold;
   font-style: normal;
 }
+.thin-font {
+  font-family: 'BeauSans Thin';
+  font-weight: 150;
+  font-style: thin;
+}
+.xthin-font {
+  font-family: 'BeauSans XThin';
+  font-weight: 150;
+  font-style: thin;
+}
 body {
   background: #2b2b2b;
   height: auto;
@@ -118,14 +126,17 @@ img[type="svg"] {
 }
 /* // ТЕКСТЫ */
 h1 {
-  font-size: 40px;
-  margin-bottom: 40px;
   font-family: 'BeauSans Bold';
   font-weight: bold;
   font-style: normal;
+  font-size: 40px;
+  margin-bottom: 40px;
 }
 .product > .product-price {
   font-size: 50px;
+  font-family: 'BeauSans Thin';
+  font-weight: 150;
+  font-style: thin;
 }
 .product-price:after {
   content: "р";
@@ -142,6 +153,9 @@ h1 {
 .product > .product-description {
   width: 200px;
   display: block;
+  font-family: 'BeauSans Thin';
+  font-weight: 150;
+  font-style: thin;
 }
 .product > * {
   width: 80%;
@@ -238,8 +252,12 @@ hr {
   background-color: white;
   border-radius: 8px;
   box-shadow: rgba(50, 50, 50, 0.22) 0px 0px 14px 1px;
+  transition: width 0.023s, height 0.023s, background-color 0.013s, transform 0.045s;
   margin: 15px;
 }
 .product:hover {
-  box-shadow: rgba(50, 50, 50, 0.12) 0px 0px 35px 2px;
+  transform: scale(1.007, 1.007);
+}
+.product:hover {
+  box-shadow: rgba(50, 50, 50, 0.12) 0px 8px 35px 2px;
 }
