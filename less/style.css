@@ -181,7 +181,7 @@ input[type="button"]:active {
   color: white;
   border: #079be6 1px solid;
   font-weight: bold;
-  background-color: #0185c9;
+  background-color: #0175b0;
 }
 .learn-more {
   background: white;
@@ -243,11 +243,11 @@ hr {
   background-color: white;
   border-radius: 8px;
   box-shadow: rgba(50, 50, 50, 0.22) 0px 0px 14px 1px;
-  transition: width 0.423s, height 0.023s, background-color 0.013s, transform 0.045s;
+  transition: transform 0.06s;
   margin: 15px;
 }
 .product:hover {
-  transform: scale(1.007, 1.007);
+  transform: scale(1.025, 1.025);
 }
 .product:hover {
   box-shadow: rgba(50, 50, 50, 0.12) 0px 8px 35px 2px;
