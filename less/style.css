@@ -45,8 +45,52 @@ body {
   justify-content: flex-start;
   text-align: center;
 }
+.product .product-sticker {
+  width: auto;
+  height: 25px;
+  margin-top: -22px;
+  margin-bottom: -25px;
+  padding: 8px 20px 1px;
+  border-radius: 40px;
+  color: white;
+  font-family: 'BeauSans Bold';
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.special {
+  width: auto;
+  height: 25px;
+  padding: 8px 20px 1px;
+  border-radius: 40px;
+  color: white;
+  font-family: 'BeauSans Bold';
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 14px;
+  background-color: #398ae6;
+  margin-top: -22px;
+  margin-bottom: -25px;
+}
+.new {
+  width: auto;
+  height: 25px;
+  margin-top: -22px;
+  margin-bottom: -25px;
+  padding: 8px 20px 1px;
+  border-radius: 40px;
+  color: white;
+  font-family: 'BeauSans Bold';
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 14px;
+  background-color: #9fca4e;
+  margin-top: -26px;
+}
 img[type="svg"] {
-  border: 1px solid black;
   margin-top: 30px;
   margin-bottom: -22px;
 }
@@ -157,6 +201,7 @@ input[type="button"]:active {
 hr {
   width: 75px;
   height: 4px;
+  margin-bottom: 40px;
   border: #017fd4 1px solid;
   border-radius: 15px;
   background-color: #017fd4;
