@@ -27,11 +27,6 @@
   font-weight: 150;
   font-style: thin;
 }
-.xthin-font {
-  font-family: 'BeauSans XThin';
-  font-weight: 150;
-  font-style: thin;
-}
 .regular-font {
   font-family: 'BeauSans Regular';
 }
@@ -39,11 +34,26 @@ body {
   background: #2b2b2b;
   height: auto;
   margin: 0;
-  /* display: flex; */
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
+}
+.products-section {
+  width: 100%;
+  height: 800px;
+  background-color: #eaf2f4;
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+.products-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.product-2 {
+  border: 2px solid #398ae6;
 }
 .product .product-sticker {
   width: auto;
@@ -94,32 +104,25 @@ img[type="svg"] {
   margin-top: 30px;
   margin-bottom: -22px;
 }
-.products-section {
-  width: 100%;
-  /* height: 500px; */
-  background-color: #eaf2f4;
-  padding-top: 20px;
-  padding-bottom: 80px;
-}
-.products-cards {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.product-2 {
-  border: 2px solid #01a7fc;
-}
 /* // ТЕКСТЫ */
-h1 {
+.products-title {
   font-family: 'BeauSans Bold';
   font-weight: bold;
   font-style: normal;
   font-size: 40px;
   margin-bottom: 23px;
 }
-.product > .product-price {
+hr {
+  width: 75px;
+  height: 4px;
+  margin-bottom: 60px;
+  border: #017fd4 1px solid;
+  border-radius: 15px;
+  background-color: #017fd4;
+}
+.product-price {
   font-size: 50px;
+  margin-bottom: -10px;
   font-family: 'BeauSans Thin';
   font-weight: 150;
   font-style: thin;
@@ -128,7 +131,7 @@ h1 {
   content: "р";
   font-size: 30px;
 }
-.product > h3 {
+.product-card-title {
   font-family: 'BeauSans Bold';
   font-style: normal;
   width: 185px;
@@ -136,7 +139,7 @@ h1 {
   font-size: 25px;
   text-align: center;
 }
-.product > .product-description {
+.product-description {
   max-width: 75%;
   display: block;
   font-family: 'BeauSans Regular';
@@ -146,17 +149,15 @@ h1 {
   width: 80%;
   display: block;
   margin: 10px auto;
-  /* flex-direction: column; */
-  /* justify-content: space-around; */
 }
 .product .buttons {
-  /* border: 1px solid black; */
   width: 80%;
   height: 115px;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: space-between;
+  margin-top: 35px;
   margin-bottom: 40px;
 }
 input[type="button"] {
@@ -176,17 +177,22 @@ input[type="button"]:active {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12px;
+  transition: ease-out 0.14s;
 }
 .buy:active {
   color: white;
   border: #079be6 1px solid;
   font-weight: bold;
+  background-color: #00314a;
+}
+.buy:hover {
   background-color: #0175b0;
 }
 .learn-more {
   background: white;
   border: navy 2px solid;
   color: #092f68;
+  transition: ease-out 0.14s;
   font-weight: bold;
   font-family: 'BeauSans Regular';
   text-transform: uppercase;
@@ -194,17 +200,14 @@ input[type="button"]:active {
 }
 .learn-more:active {
   background: #dedede;
-  border: #00004d 2px solid;
-  color: #00005c;
+  border: #142b57 2px solid;
+  color: #163264;
   font-weight: bold;
 }
-hr {
-  width: 75px;
-  height: 4px;
-  margin-bottom: 60px;
-  border: #017fd4 1px solid;
-  border-radius: 15px;
-  background-color: #017fd4;
+.learn-more:hover {
+  background: #142b57;
+  border: #142b57 2px solid;
+  color: white;
 }
 @media (min-width: 576px) {
   .products-cards .product {
@@ -242,13 +245,14 @@ hr {
   height: 580px;
   background-color: white;
   border-radius: 8px;
-  box-shadow: rgba(50, 50, 50, 0.22) 0px 0px 14px 1px;
-  transition: transform 0.06s;
+  box-shadow: rgba(50, 50, 50, 0.23) 0px 3px 12px 1px;
+  transition: ease-in transform 0.3s, margin 0.32s, box-shadow 0.35s;
   margin: 15px;
 }
 .product:hover {
   transform: scale(1.025, 1.025);
-}
-.product:hover {
-  box-shadow: rgba(50, 50, 50, 0.12) 0px 8px 35px 2px;
+  box-shadow: rgba(50, 50, 50, 0.17) 0px 12px 30px 2px;
+  position: relative;
+  margin: 0px 15px 30px;
+  transition: ease-out transform 0.23s, margin 0.25s, box-shadow 0.25s;
 }
