@@ -63,7 +63,7 @@ body {
 
 .products-section {
 width: 100%;
-height: 800px;
+height: 850px;
 background-color: rgb(234,242,244);
 padding-top: 20px; 
 padding-bottom: 80px; }
@@ -114,25 +114,39 @@ margin-bottom: -22px;}
 // HEADER______________________________________________
 
 header{
+  position: fixed;
+  z-index: 100;
+
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: white;
+  
+  width: 100%;
+
   padding: 12px;
-  // height: auto;
   margin-right: 0;
   padding-left: 0;
+
+  background-color: white;
+  box-shadow: rgba(50,50,50, 0.23) 0px 3px 12px 1px;
+}
+.escape {
+  width: 100%;
+  height: 130px;
 }
 header *{
   // border: 1px solid lightgray;
   font-size: 18px;
 }
+
 .sdd.logo{
   width: auto;
   height: auto;
   padding-right:20px;
-  padding-left:10px;
+  padding-left:15px;
+  border-right: 1px solid rgb(206, 215, 241);
 }
+
 .eset.logo{
   // width: ;
   // height: auto;
@@ -147,17 +161,63 @@ header *{
   display: inline-block;
   list-style-type: none;
 }
-
+.menu {
+  margin-right: auto;
+}
 .menu>li {
   padding: 16px;
   .regular-font;
   font-weight: 500;
+  margin-right: auto;
+}
+
+.menu>li:hover{
+  color: lighten(navy, 15%);
+}
+
+.submit {
+  margin-left: 12px;
+  margin-right: 0;
+  border:none;
+
+  padding-left: 22px;
+  padding-right: 22px;
+
+  .bold-font;
+  color: white;
+  background-color: @blue;
+  text-transform: uppercase;
+
+  transition: ease-in 0.15s;
+}
+
+.submit:hover{
+  background-color: darken(@blue, 15%);
+  transition: ease-out 0.15s;
+}
+
+.cart{
+  margin-left: 23px;
+  margin-right: 20px; 
+  width: 24px;
+  height: 24px;
+  // background-color: cornflowerblue;
+}
+
+div.phone-number{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 20px;
+
+  .bold-font;
+  color: rgb(46, 46, 46);
 }
   
   
   /* // ТЕКСТЫ */
 .products-title{
   .bold-font;
+  margin-top:130px;
   font-size: 40px;
   margin-bottom: 23px;
 }
@@ -306,4 +366,6 @@ margin: 15px;
   margin: 0px 15px 30px;
   transition: ease-out transform 0.18s, margin 0.32s, box-shadow 0.20s;
   // transition: ease-out transform 0.18s, margin 0.20s;
+
+  // z-index: 100;
 }

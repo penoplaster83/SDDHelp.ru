@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/js/main.js"></script>
   <link rel="stylesheet" type="text/css" href="/less/style.css">
 
@@ -15,7 +16,7 @@
 <body>
 
   <header>
-    <img src="/img/sdd-logo.png" alt="" class="sdd logo" style="border-right: 1px solid black">
+    <img src="/img/sdd-logo.png" alt="" class="sdd logo">
     <img src="/img/eset-logo.png" alt="" class="eset logo">
     <ui class="menu">
       <li class="menu-item">Главная</li>
@@ -24,7 +25,11 @@
       <li class="menu-item">Отзывы</li>
       <li class="menu-item">Скачать</li>
     </ui>
+    <div class="phone-number">8 (800) 333-46-67</div>
+    <input type="button" class="submit" value="Оставить заявку">
+    <img src="/img/cart.png" class="cart"></div>
   </header>
+
   <!-- секция со слайдером из трёх изображений -->
   <div class="promo-slider"></div>
   <!-- почти законченная секция с карточками продуктов -->
@@ -32,7 +37,7 @@
     <h1 class="products-title">Компьютерная помощь</h1>
     <hr>
     <div class="products-cards">
-      <div class="product product-1">
+      <div class="product product-1 tar">
         <div class="product-image">
           <img src="/svg/logo-onetime-master-product.svg" type="svg" alt="">
         </div>
@@ -75,7 +80,7 @@
     </div>
   </div>
 
-  <footer></footer>
+  <footer style="height: 600px;"></footer>
 </body>
 
 </html>
