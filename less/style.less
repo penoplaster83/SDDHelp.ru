@@ -53,10 +53,12 @@ body {
   background: #2b2b2b;
   height: auto;
   margin: 0;
+  padding: 0;
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
+  .regular-font
   }
 
 .products-section {
@@ -104,15 +106,52 @@ flex-direction: column;}
   background-color: @grass;
   margin-top: -26px;}
 
-
 img[type="svg"]{
 // border: 1px solid black;
 margin-top: 30px;
 margin-bottom: -22px;}
 
 
-  
-  
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  padding: 12px;
+  // height: auto;
+  margin-right: 0;
+  padding-left: 0;
+}
+header *{
+  // border: 1px solid lightgray;
+  font-size: 18px;
+}
+.sdd.logo{
+  width: auto;
+  height: auto;
+  padding-right:20px;
+  padding-left:10px;
+}
+.eset.logo{
+  // width: ;
+  // height: auto;
+  padding-right:30px;
+  padding-left:20px;
+  margin-right:0;
+}
+
+.menu, .menu>li {
+  height: 100%;
+  vertical-align: center;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.menu>li {
+  padding: 16px;
+  .regular-font;
+  font-weight: 500;
+}
   
   
   /* // ТЕКСТЫ */
@@ -250,7 +289,7 @@ justify-content: space-around;
 width: @product-card-width;
 height: 580px;
 
-background-color: white;
+background-color: rgba(245,245,245, 1);
 border-radius: 8px;
 box-shadow: rgba(50,50,50, 0.23) 0px 3px 12px 1px;
 transition: ease-in transform 0.20s, margin 0.32s, box-shadow 0.25s;
@@ -259,6 +298,7 @@ transition: ease-in transform 0.20s, margin 0.32s, box-shadow 0.25s;
 margin: 15px;
 } 
 .product:hover{
+  background-color: white;
   transform: scale(1.025,1.025);
   box-shadow: rgba(50,50,50, 0.17) 0px 12px 30px 2px;
   position: relative;
