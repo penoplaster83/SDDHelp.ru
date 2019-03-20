@@ -114,25 +114,39 @@ margin-bottom: -22px;}
 // HEADER______________________________________________
 
 header{
+  position: fixed;
+  z-index: 100;
+
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: white;
+  
+  width: 100%;
+
   padding: 12px;
-  // height: auto;
   margin-right: 0;
   padding-left: 0;
+
+  background-color: white;
+  box-shadow: rgba(50,50,50, 0.23) 0px 3px 12px 1px;
+}
+.escape {
+  width: 100%;
+  height: 130px;
 }
 header *{
   // border: 1px solid lightgray;
   font-size: 18px;
 }
+
 .sdd.logo{
   width: auto;
   height: auto;
   padding-right:20px;
-  padding-left:10px;
+  padding-left:15px;
+  border-right: 1px solid rgb(206, 215, 241);
 }
+
 .eset.logo{
   // width: ;
   // height: auto;
@@ -153,11 +167,42 @@ header *{
   .regular-font;
   font-weight: 500;
 }
+.menu>li:hover{
+  color: lighten(navy, 15%);
+}
+
+.submit {
+  margin-left: auto;
+  margin-right: 0;
+  border:none;
+
+  .bold-font;
+  color: white;
+  background-color: @blue;
+  text-transform: uppercase;
+}
+.cart{
+  margin-left: 5px;
+  margin-right: 0; 
+  width: 50px;
+  height: 50px;
+  background-color: cornflowerblue;
+}
+
+p.phone-number{
+  margin-left: auto;
+  margin-right: 0;
+
+  .bold-font;
+  color: black;
+  
+}
   
   
   /* // ТЕКСТЫ */
 .products-title{
   .bold-font;
+  margin-top:130px;
   font-size: 40px;
   margin-bottom: 23px;
 }
@@ -306,4 +351,6 @@ margin: 15px;
   margin: 0px 15px 30px;
   transition: ease-out transform 0.18s, margin 0.32s, box-shadow 0.20s;
   // transition: ease-out transform 0.18s, margin 0.20s;
+
+  // z-index: 100;
 }
