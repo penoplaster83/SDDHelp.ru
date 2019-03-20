@@ -43,7 +43,7 @@ body {
 }
 .products-section {
   width: 100%;
-  height: 800px;
+  height: 850px;
   background-color: #eaf2f4;
   padding-top: 20px;
   padding-bottom: 80px;
@@ -145,39 +145,50 @@ header * {
   display: inline-block;
   list-style-type: none;
 }
+.menu {
+  margin-right: auto;
+}
 .menu > li {
   padding: 16px;
   font-family: 'BeauSans Regular';
   font-weight: 500;
+  margin-right: auto;
 }
 .menu > li:hover {
   color: #0000cd;
 }
 .submit {
-  margin-left: auto;
+  margin-left: 12px;
   margin-right: 0;
   border: none;
+  padding-left: 22px;
+  padding-right: 22px;
   font-family: 'BeauSans Bold';
   font-weight: bold;
   font-style: normal;
   color: white;
   background-color: #398ae6;
   text-transform: uppercase;
+  transition: ease-in 0.15s;
+}
+.submit:hover {
+  background-color: #1864bb;
+  transition: ease-out 0.15s;
 }
 .cart {
-  margin-left: 5px;
-  margin-right: 0;
-  width: 50px;
-  height: 50px;
-  background-color: cornflowerblue;
+  margin-left: 23px;
+  margin-right: 20px;
+  width: 24px;
+  height: 24px;
 }
-p.phone-number {
+div.phone-number {
+  display: inline-block;
   margin-left: auto;
-  margin-right: 0;
+  margin-right: 20px;
   font-family: 'BeauSans Bold';
   font-weight: bold;
   font-style: normal;
-  color: black;
+  color: #2e2e2e;
 }
 /* // ТЕКСТЫ */
 .products-title {
