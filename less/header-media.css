@@ -1,0 +1,39 @@
+@media (min-width: 576px) {
+  .menu {
+    display: none;
+  }
+  .menu + div.phone-number {
+    display: none;
+  }
+  .eset.logo {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .menu {
+    display: inline-block;
+  }
+  li.menu-item {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1514px) {
+  li.menu-item {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1544px) {
+  .menu + div.phone-number {
+    display: block;
+    margin-right: 0px;
+    margin-left: auto;
+  }
+}
+@media (min-width: 1665px) {
+  .eset.logo {
+    display: inline-block;
+  }
+  .sdd.logo {
+    border-right: 1px solid #ced7f1;
+  }
+}

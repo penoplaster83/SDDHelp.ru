@@ -119,32 +119,27 @@ header {
   background-color: white;
   box-shadow: rgba(50, 50, 50, 0.23) 0px 3px 12px 1px;
 }
-header * {
-  font-size: 18px;
-}
 .sdd.logo {
   width: auto;
   height: auto;
   padding-right: 20px;
   padding-left: 15px;
-  border-right: 1px solid #ced7f1;
 }
 .eset.logo {
   padding-right: 30px;
   padding-left: 20px;
   margin-right: 0;
 }
-.menu,
+.menu {
+  height: 100%;
+  vertical-align: center;
+  margin-right: auto;
+}
 .menu > li {
   height: 100%;
   vertical-align: center;
   display: inline-block;
   list-style-type: none;
-}
-.menu {
-  margin-right: auto;
-}
-.menu > li {
   padding: 16px;
   font-family: 'BeauSans Regular';
   font-weight: 500;
@@ -154,7 +149,7 @@ header * {
   color: #0000cd;
 }
 .submit {
-  margin-left: 12px;
+  margin-left: auto;
   margin-right: 0;
   border: none;
   padding-left: 22px;
@@ -177,10 +172,11 @@ header * {
   width: 24px;
   height: 24px;
 }
-div.phone-number {
+.phone-number {
   display: inline-block;
   margin-left: auto;
   margin-right: 20px;
+  font-size: 18px;
   font-family: 'BeauSans Bold';
   font-weight: bold;
   font-style: normal;
@@ -315,6 +311,15 @@ input[type="button"]:active {
   }
 }
 @media (min-width: 1200px) {
+  .products-cards .product {
+    width: 350px;
+    flex-wrap: nowrap;
+  }
+  h3 {
+    width: 150px;
+  }
+}
+@media (min-width: 1514px) {
   .products-cards .product {
     width: 450px;
     flex-wrap: nowrap;
