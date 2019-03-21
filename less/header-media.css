@@ -12,9 +12,12 @@
 @media (min-width: 1200px) {
   .menu {
     display: inline-block;
+    margin-right: 30px;
   }
   li.menu-item {
-    font-size: 14px;
+    font-size: 15px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 @media (min-width: 1514px) {
@@ -24,9 +27,13 @@
 }
 @media (min-width: 1544px) {
   .menu + div.phone-number {
-    display: block;
+    display: inline-block;
     margin-right: 0px;
     margin-left: auto;
+  }
+  .phone-number + .submit {
+    margin-left: 35px;
+    margin-right: 0px;
   }
 }
 @media (min-width: 1665px) {
