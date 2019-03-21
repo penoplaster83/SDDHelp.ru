@@ -1,3 +1,14 @@
+body {
+  background: #2b2b2b;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  font-family: 'BeauSans Regular';
+}
 @font-face {
   font-family: 'BeauSans Bold';
   src: url('/fonts/PFBeauSansPro-Bold.eot');
@@ -30,82 +41,6 @@
 .regular-font {
   font-family: 'BeauSans Regular';
 }
-body {
-  background: #2b2b2b;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: center;
-  font-family: 'BeauSans Regular';
-}
-.products-section {
-  width: 100%;
-  height: 850px;
-  background-color: #eaf2f4;
-  padding-top: 20px;
-  padding-bottom: 80px;
-}
-.products-cards {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.product-2 {
-  border: 2px solid #398ae6;
-}
-.product .product-sticker {
-  width: auto;
-  height: 25px;
-  margin-top: -22px;
-  margin-bottom: -25px;
-  padding: 8px 16px 1px 16px;
-  border-radius: 40px;
-  color: white;
-  font-family: 'BeauSans Bold';
-  font-weight: bold;
-  font-style: normal;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-.special {
-  width: auto;
-  height: 25px;
-  padding: 8px 16px 1px 16px;
-  border-radius: 40px;
-  color: white;
-  font-family: 'BeauSans Bold';
-  font-weight: bold;
-  font-style: normal;
-  text-transform: uppercase;
-  font-size: 14px;
-  background-color: #398ae6;
-  margin-top: -22px;
-  margin-bottom: -25px;
-}
-.new {
-  width: auto;
-  height: 25px;
-  margin-top: -22px;
-  margin-bottom: -25px;
-  padding: 8px 16px 1px 16px;
-  border-radius: 40px;
-  color: white;
-  font-family: 'BeauSans Bold';
-  font-weight: bold;
-  font-style: normal;
-  text-transform: uppercase;
-  font-size: 14px;
-  background-color: #9fca4e;
-  margin-top: -26px;
-}
-img[type="svg"] {
-  margin-top: 30px;
-  margin-bottom: -22px;
-}
 header {
   position: fixed;
   z-index: 100;
@@ -117,7 +52,11 @@ header {
   margin-right: 0;
   padding-left: 0;
   background-color: white;
-  box-shadow: rgba(50, 50, 50, 0.23) 0px 3px 12px 1px;
+  box-shadow: rgba(50, 50, 50, 0.1) 0px 2px 10px 1px;
+  transition: ease-in-out box-shadow 0.25s;
+}
+header:hover {
+  box-shadow: rgba(50, 50, 50, 0.24) 0px 3px 26px 2px;
 }
 .sdd.logo {
   width: auto;
@@ -146,7 +85,8 @@ header {
   margin-right: auto;
 }
 .menu > li:hover {
-  color: #0000cd;
+  color: #295eaf;
+  text-shadow: 0px 0px 2px #335ba54b;
 }
 .submit {
   margin-left: auto;
@@ -182,7 +122,42 @@ header {
   font-style: normal;
   color: #2e2e2e;
 }
-/* // ТЕКСТЫ */
+.products-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #eaf2f4;
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+.products-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.product-2 {
+  border: 2px solid #398ae6;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 10px 15px 50px;
+  width: 90%;
+  height: 580px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 50, 0.23) 0px 3px 12px 1px;
+  transition: ease-in transform 0.2s, margin 0.32s, box-shadow 0.25s;
+}
+.product:hover {
+  background-color: white;
+  transform: scale(1.022, 1.022) translate(0, -20px);
+  box-shadow: rgba(50, 50, 50, 0.2) 0px 12px 30px 2px;
+  position: relative;
+  transition: ease-out transform 0.18s, margin 0.29s, box-shadow 0.2s;
+}
 .products-title {
   font-family: 'BeauSans Bold';
   font-weight: bold;
@@ -288,6 +263,62 @@ input[type="button"]:active {
   border: #142b57 2px solid;
   color: white;
 }
+.product .product-sticker {
+  width: auto;
+  height: 25px;
+  margin-top: -22px;
+  margin-bottom: -25px;
+  padding: 8px 16px 1px 16px;
+  border-radius: 40px;
+  color: white;
+  font-family: 'BeauSans Bold';
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.special {
+  width: auto;
+  height: 25px;
+  padding: 8px 16px 1px 16px;
+  border-radius: 40px;
+  color: white;
+  font-family: 'BeauSans Bold';
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 14px;
+  background-color: #398ae6;
+  margin-top: -22px;
+  margin-bottom: -25px;
+}
+.new {
+  width: auto;
+  height: 25px;
+  margin-top: -22px;
+  margin-bottom: -25px;
+  padding: 8px 16px 1px 16px;
+  border-radius: 40px;
+  color: white;
+  font-family: 'BeauSans Bold';
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 14px;
+  background-color: #9fca4e;
+  margin-top: -26px;
+}
+img[type="svg"] {
+  margin-top: 30px;
+  margin-bottom: -22px;
+}
+footer {
+  display: flex;
+  height: 50px;
+  background-color: #bebebe;
+  justify-content: center;
+  align-items: center;
+}
 @media (min-width: 576px) {
   .products-cards .product {
     width: 510px;
@@ -324,24 +355,4 @@ input[type="button"]:active {
     width: 450px;
     flex-wrap: nowrap;
   }
-}
-.product {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90%;
-  height: 580px;
-  background-color: #f7f7f7;
-  border-radius: 8px;
-  box-shadow: rgba(50, 50, 50, 0.23) 0px 3px 12px 1px;
-  transition: ease-in transform 0.2s, margin 0.32s, box-shadow 0.25s;
-  margin: 15px;
-}
-.product:hover {
-  background-color: white;
-  transform: scale(1.025, 1.025);
-  box-shadow: rgba(50, 50, 50, 0.2) 0px 12px 30px 2px;
-  position: relative;
-  margin: 0px 15px 30px;
-  transition: ease-out transform 0.18s, margin 0.32s, box-shadow 0.2s;
 }

@@ -6,59 +6,6 @@
 @product-card-width: 90%;
 @product-card-height: 600px;
 
-// ШРИФТЫ //
-
-@font-face {
-  font-family: 'BeauSans Bold';
-  src: url('/fonts/PFBeauSansPro-Bold.eot');
-  src: local('PFBeauSansPro-Bold'),
-    url('/fonts/PFBeauSansPro-Bold.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/PFBeauSansPro-Bold.woff') format('woff'),
-    url('/fonts/PFBeauSansPro-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'BeauSans Thin';
-  src: url('/fonts/PFBeauSansPro-Thin.eot');
-  src: local('PFBeauSansPro-Thin'),
-    url('/fonts/PFBeauSansPro-Thin.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/PFBeauSansPro-Thin.woff') format('woff'),
-    url('/fonts/PFBeauSansPro-Thin.ttf') format('truetype');
-  // font-weight: thin;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'BeauSans Regular';
-  src: url('/fonts/PFBeauSansPro-Regular.eot');
-  src: local('PFBeauSansPro-Regular'),
-    url('/fonts/PFBeauSansPro-Regular.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/PFBeauSansPro-Regular.woff') format('woff'),
-    url('/fonts/PFBeauSansPro-Regular.ttf') format('truetype');
-  // font-weight: thin;
-  font-style: normal;
-}
-
-.bold-font {
-  font-family: 'BeauSans Bold';
-  font-weight: bold;
-  font-style: normal;
-}
-
-.thin-font {
-  font-family: 'BeauSans Thin';
-  font-weight: 150;
-  font-style: thin;
-}
-
-.regular-font {
-  font-family: 'BeauSans Regular';
-}
-
-
-
 body {
   background: #2b2b2b;
   height: auto;
@@ -71,65 +18,61 @@ body {
   .regular-font
 }
 
-.products-section {
-  width: 100%;
-  height: 850px;
-  background-color: rgb(234, 242, 244);
-  padding-top: 20px;
-  padding-bottom: 80px;
+//--------------------------------------------
+//  ШРИФТЫ
+//--------------------------------------------
+
+@font-face {
+  font-family: 'BeauSans Bold';
+  src: url('/fonts/PFBeauSansPro-Bold.eot');
+  src: local('PFBeauSansPro-Bold'),
+    url('/fonts/PFBeauSansPro-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/PFBeauSansPro-Bold.woff') format('woff'),
+    url('/fonts/PFBeauSansPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BeauSans Thin';
+  src: url('/fonts/PFBeauSansPro-Thin.eot');
+  src: local('PFBeauSansPro-Thin'),
+    url('/fonts/PFBeauSansPro-Thin.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/PFBeauSansPro-Thin.woff') format('woff'),
+    url('/fonts/PFBeauSansPro-Thin.ttf') format('truetype');
+  // font-weight: thin;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BeauSans Regular';
+  src: url('/fonts/PFBeauSansPro-Regular.eot');
+  src: local('PFBeauSansPro-Regular'),
+    url('/fonts/PFBeauSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/PFBeauSansPro-Regular.woff') format('woff'),
+    url('/fonts/PFBeauSansPro-Regular.ttf') format('truetype');
+  // font-weight: thin;
+  font-style: normal;
+}
+.bold-font {
+  font-family: 'BeauSans Bold';
+  font-weight: bold;
+  font-style: normal;
+}
+.thin-font {
+  font-family: 'BeauSans Thin';
+  font-weight: 150;
+  font-style: thin;
+}
+.regular-font {
+  font-family: 'BeauSans Regular';
 }
 
-.products-cards {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.product-2 {
-  border: 2px solid @blue;
-}
 
 
-// ПЛАШКИ____________________________________________
 
-.product .product-sticker {
-  // position: relative;
+//--------------------------------------------
+// HEADER
+//--------------------------------------------
 
-  width: auto;
-  height: 25px;
-
-  margin-top: -22px;
-  margin-bottom: -25px;
-  padding: 8px 16px 1px 16px;
-
-  border-radius: 40px;
-  color: white;
-  .bold-font;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-
-.special {
-  .product .product-sticker;
-  background-color: @blue;
-  margin-top: -22px;
-  margin-bottom: -25px;
-}
-
-.new {
-  .product .product-sticker;
-  background-color: @grass;
-  margin-top: -26px;
-}
-
-img[type="svg"] {
-  // border: 1px solid black;
-  margin-top: 30px;
-  margin-bottom: -22px;
-}
-
-// HEADER______________________________________________
 
 header {
   position: fixed;
@@ -146,7 +89,11 @@ header {
   padding-left: 0;
 
   background-color: white;
-  box-shadow: rgba(50, 50, 50, 0.23) 0px 3px 12px 1px;
+  box-shadow: rgba(50, 50, 50, 0.10) 0px 2px 10px 1px;
+  transition: ease-in-out box-shadow 0.25s;
+}
+header:hover {
+  box-shadow: rgba(50, 50, 50, 0.24) 0px 3px 26px 2px;
 }
 
 .sdd.logo {
@@ -163,9 +110,6 @@ header {
   margin-right: 0;
   // display: none;
 }
-
-
-
 
 .menu {
   height: 100%;
@@ -186,7 +130,8 @@ header {
 }
 
 .menu>li:hover {
-  color: lighten(navy, 15%);
+  color: lighten(rgb(31, 72, 134), 10%);
+  text-shadow: 0px 0px 2px #335ba54b;
 }
 
 .submit {
@@ -228,8 +173,62 @@ header {
   color: rgb(46, 46, 46);
 }
 
+//--------------------------------------------
+// ПРОДУКТЫ
+//--------------------------------------------
 
-/* // ТЕКСТЫ */
+.products-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // height: 950px;
+  background-color: rgb(234, 242, 244);
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+.products-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.product-2 {
+  border: 2px solid @blue;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  margin: 10px 15px 50px;
+  
+
+  width: @product-card-width;
+  height: 580px;
+
+  background-color: rgba(247, 247, 247, 1);
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 50, 0.23) 0px 3px 12px 1px;
+  transition: ease-in transform 0.20s, margin 0.32s, box-shadow 0.25s;
+  // transition: ease-in transform 0.20s, margin 0.22s;
+
+  
+}
+
+.product:hover {
+  // margin: 0px 15px 30px;
+
+  background-color: white;
+  transform: scale(1.022, 1.022) translate(0, -20px);
+  box-shadow: rgba(50, 50, 50, 0.20) 0px 12px 30px 2px;
+  position: relative;
+  
+  transition: ease-out transform 0.18s, margin 0.29s, box-shadow 0.20s;
+  // transition: ease-out transform 0.18s, margin 0.20s;
+
+  // z-index: 100;
+}
+
 .products-title {
   .bold-font;
   margin-top: 130px;
@@ -350,6 +349,54 @@ input[type="button"]:active {
 
 
 
+//--------------------------------------------
+// ПЛАШКИ
+//--------------------------------------------
+.product .product-sticker {
+  // position: relative;
+
+  width: auto;
+  height: 25px;
+
+  margin-top: -22px;
+  margin-bottom: -25px;
+  padding: 8px 16px 1px 16px;
+
+  border-radius: 40px;
+  color: white;
+  .bold-font;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.special {
+  .product .product-sticker;
+  background-color: @blue;
+  margin-top: -22px;
+  margin-bottom: -25px;
+}
+
+.new {
+  .product .product-sticker;
+  background-color: @grass;
+  margin-top: -26px;
+}
+
+img[type="svg"] {
+  // border: 1px solid black;
+  margin-top: 30px;
+  margin-bottom: -22px;
+}
+
+
+footer{
+  display: flex;
+  height: 50px;
+  background-color: rgb(190, 190, 190);
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 576px) {
   .products-cards .product {
     width: 510px;
@@ -399,32 +446,3 @@ input[type="button"]:active {
 
 
 
-
-.product {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-  width: @product-card-width;
-  height: 580px;
-
-  background-color: rgba(247, 247, 247, 1);
-  border-radius: 8px;
-  box-shadow: rgba(50, 50, 50, 0.23) 0px 3px 12px 1px;
-  transition: ease-in transform 0.20s, margin 0.32s, box-shadow 0.25s;
-  // transition: ease-in transform 0.20s, margin 0.22s;
-
-  margin: 15px;
-}
-
-.product:hover {
-  background-color: white;
-  transform: scale(1.025, 1.025);
-  box-shadow: rgba(50, 50, 50, 0.20) 0px 12px 30px 2px;
-  position: relative;
-  margin: 0px 15px 30px;
-  transition: ease-out transform 0.18s, margin 0.32s, box-shadow 0.20s;
-  // transition: ease-out transform 0.18s, margin 0.20s;
-
-  // z-index: 100;
-}
