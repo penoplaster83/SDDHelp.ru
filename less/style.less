@@ -6,6 +6,10 @@
 @product-card-width: 90%;
 @product-card-height: 600px;
 
+.brdr{
+  border: 1px solid black;
+}
+
 body {
   background: #2b2b2b;
   height: auto;
@@ -17,6 +21,8 @@ body {
   text-align: center;
   .regular-font
 }
+
+
 
 //--------------------------------------------
 //  ШРИФТЫ
@@ -68,11 +74,9 @@ body {
 
 
 
-
 //--------------------------------------------
-// HEADER
+//  HEADER
 //--------------------------------------------
-
 
 header {
   position: fixed;
@@ -115,7 +119,7 @@ header:hover {
   height: 100%;
   vertical-align: center;
   margin-right: auto;
-  // display: inline-block;
+  display: none;
 }
 
 .menu>li {
@@ -173,6 +177,8 @@ header:hover {
   color: rgb(46, 46, 46);
 }
 
+
+
 //--------------------------------------------
 // ПРОДУКТЫ
 //--------------------------------------------
@@ -195,14 +201,29 @@ header:hover {
 .product-2 {
   border: 2px solid @blue;
 }
+// .product {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+
+//   margin: 10px 15px 50px;
+  
+//   width: @product-card-width;
+//   height: 580px;
+
+//   background-color: rgba(247, 247, 247, 1);
+//   border-radius: 8px;
+//   box-shadow: rgba(50, 50, 50, 0.23) 0px 3px 12px 1px;
+//   transition: ease-in transform 0.20s, margin 0.32s, box-shadow 0.25s;
+// }
+
 .product {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-end;
 
   margin: 10px 15px 50px;
   
-
   width: @product-card-width;
   height: 580px;
 
@@ -210,23 +231,16 @@ header:hover {
   border-radius: 8px;
   box-shadow: rgba(50, 50, 50, 0.23) 0px 3px 12px 1px;
   transition: ease-in transform 0.20s, margin 0.32s, box-shadow 0.25s;
-  // transition: ease-in transform 0.20s, margin 0.22s;
-
-  
 }
 
-.product:hover {
-  // margin: 0px 15px 30px;
 
+.product:hover {
   background-color: white;
   transform: scale(1.022, 1.022) translate(0, -20px);
   box-shadow: rgba(50, 50, 50, 0.20) 0px 12px 30px 2px;
   position: relative;
   
   transition: ease-out transform 0.18s, margin 0.29s, box-shadow 0.20s;
-  // transition: ease-out transform 0.18s, margin 0.20s;
-
-  // z-index: 100;
 }
 
 .products-title {
@@ -247,29 +261,35 @@ hr {
 }
 
 .product-price {
-  font-size: 50px;
+  font-size: 32px;
+  margin-top: 40px;
   margin-bottom: -10px;
   .thin-font
 }
 
 .product-price:after {
   content: "р";
-  font-size: 30px;
+  font-size: 18px;
+  padding-left: 4px;
+  // white-space: 1px;
 }
 
-.product-card-title {
+.product > .product-card-title {
   .bold-font;
-  width: 185px;
+  width: 150px;
+  word-spacing: 20px;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 18px;
   text-align: center;
+  margin-top: 30px;
+  .brdr
 }
 
 .product-description {
   max-width: 75%;
   display: block;
   .regular-font;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .product>* {
@@ -287,6 +307,7 @@ hr {
   justify-content: space-between;
   margin-top: 35px;
   margin-bottom: 40px;
+  // border: 1px solid black;
 }
 
 input[type="button"] {
@@ -353,13 +374,11 @@ input[type="button"]:active {
 // ПЛАШКИ
 //--------------------------------------------
 .product .product-sticker {
-  // position: relative;
-
-  width: auto;
+    
   height: 25px;
 
-  margin-top: -22px;
-  margin-bottom: -25px;
+  margin-top: -17px;
+  // margin-bottom: 1px;
   padding: 8px 16px 1px 16px;
 
   border-radius: 40px;
@@ -369,38 +388,59 @@ input[type="button"]:active {
   font-size: 14px;
 }
 
+.sticker-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin-top: 0;
+  margin-bottom: auto;
+  // border: 1px solid black;
+}
+
 .special {
   .product .product-sticker;
   background-color: @blue;
   margin-top: -22px;
   margin-bottom: -25px;
+  width: 90px;
 }
 
 .new {
   .product .product-sticker;
   background-color: @grass;
   margin-top: -26px;
+  width: 50px;
 }
 
 img[type="svg"] {
   // border: 1px solid black;
-  margin-top: 30px;
-  margin-bottom: -22px;
+  margin-top: 10px;
+  margin-bottom: -12px;
 }
 
 
 footer{
   display: flex;
-  height: 50px;
-  background-color: rgb(190, 190, 190);
+  height: 250px;
+  // background-color: rgb(190, 190, 190);
   justify-content: center;
   align-items: center;
+  color: azure;
 }
+
 
 @media (min-width: 576px) {
   .products-cards .product {
     width: 510px;
+    // background-color: rgb(230, 228, 150);
   }
+  .menu{display: none;}
+
 }
 
 @media (min-width: 768px) {
@@ -408,21 +448,54 @@ footer{
     flex-direction: row;
     flex-wrap: wrap;
   }
+  
+  .menu-mobile{display: block;}
 
   .products-cards .product {
-    width: 320px;
+    width: 328px;
+    // background-color: rgb(165, 172, 182);
   }
+
+  .product > .product-card-title{
+    width: 150px;
+    word-spacing: 20px;
+    
+  }
+
+  .product-card-title{
+    width: 220px;
+    font-size: 19px;
+  }
+
+  .product-description{
+    width: 300px;
+    font-size: 14px;
+  }
+
+  .product-price {
+    font-size: 50px;
+  }
+
+  .product-price:after {
+    font-size: 26px;
+  }
+
 }
 
 @media (min-width: 992px) {
-  .products-cards {
-    flex-wrap: nowrap;
-  }
-
   .products-cards .product {
-    width: 320px;
+    width: 287px;
   }
 
+  .product-description{
+    width: 180px;
+    font-size: 18px;
+  }
+
+  .product-card-title{
+    width: 220px;
+    font-size: 25px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -430,9 +503,14 @@ footer{
     width: 350px;
     flex-wrap: nowrap;
   }
+  .menu{display: block;}
 
-  h3 {
-    width: 150px;
+  .product-card-title {
+    width: 200px;
+  }
+
+  .product-description{
+    width: 250px;
   }
 }
 
@@ -441,8 +519,8 @@ footer{
     width: 450px;
     flex-wrap: nowrap;
   }
-
+  .eset.logo{display: inline-block;}
 }
 
-
-
+.phone-number{display: none;}
+.eset.logo{display: none;}

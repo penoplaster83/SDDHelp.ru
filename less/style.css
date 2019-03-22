@@ -1,3 +1,6 @@
+.brdr {
+  border: 1px solid black;
+}
 body {
   background: #2b2b2b;
   height: auto;
@@ -73,6 +76,7 @@ header:hover {
   height: 100%;
   vertical-align: center;
   margin-right: auto;
+  display: none;
 }
 .menu > li {
   height: 100%;
@@ -142,7 +146,7 @@ header:hover {
 .product {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-end;
   margin: 10px 15px 50px;
   width: 90%;
   height: 580px;
@@ -175,7 +179,8 @@ hr {
   background-color: #017fd4;
 }
 .product-price {
-  font-size: 50px;
+  font-size: 32px;
+  margin-top: 40px;
   margin-bottom: -10px;
   font-family: 'BeauSans Thin';
   font-weight: 150;
@@ -183,21 +188,25 @@ hr {
 }
 .product-price:after {
   content: "р";
-  font-size: 30px;
+  font-size: 18px;
+  padding-left: 4px;
 }
-.product-card-title {
+.product > .product-card-title {
   font-family: 'BeauSans Bold';
   font-style: normal;
-  width: 185px;
+  width: 150px;
+  word-spacing: 20px;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 18px;
   text-align: center;
+  margin-top: 30px;
+  border: 1px solid black;
 }
 .product-description {
   max-width: 75%;
   display: block;
   font-family: 'BeauSans Regular';
-  font-size: 18px;
+  font-size: 15px;
 }
 .product > * {
   width: 80%;
@@ -264,10 +273,8 @@ input[type="button"]:active {
   color: white;
 }
 .product .product-sticker {
-  width: auto;
   height: 25px;
-  margin-top: -22px;
-  margin-bottom: -25px;
+  margin-top: -17px;
   padding: 8px 16px 1px 16px;
   border-radius: 40px;
   color: white;
@@ -277,9 +284,20 @@ input[type="button"]:active {
   text-transform: uppercase;
   font-size: 14px;
 }
+.sticker-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin-top: 0;
+  margin-bottom: auto;
+}
 .special {
-  width: auto;
   height: 25px;
+  margin-top: -17px;
   padding: 8px 16px 1px 16px;
   border-radius: 40px;
   color: white;
@@ -291,12 +309,11 @@ input[type="button"]:active {
   background-color: #398ae6;
   margin-top: -22px;
   margin-bottom: -25px;
+  width: 90px;
 }
 .new {
-  width: auto;
   height: 25px;
-  margin-top: -22px;
-  margin-bottom: -25px;
+  margin-top: -17px;
   padding: 8px 16px 1px 16px;
   border-radius: 40px;
   color: white;
@@ -307,21 +324,25 @@ input[type="button"]:active {
   font-size: 14px;
   background-color: #9fca4e;
   margin-top: -26px;
+  width: 50px;
 }
 img[type="svg"] {
-  margin-top: 30px;
-  margin-bottom: -22px;
+  margin-top: 10px;
+  margin-bottom: -12px;
 }
 footer {
   display: flex;
-  height: 50px;
-  background-color: #bebebe;
+  height: 250px;
   justify-content: center;
   align-items: center;
+  color: azure;
 }
 @media (min-width: 576px) {
   .products-cards .product {
     width: 510px;
+  }
+  .menu {
+    display: none;
   }
 }
 @media (min-width: 768px) {
@@ -329,16 +350,42 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
   }
+  .menu-mobile {
+    display: block;
+  }
   .products-cards .product {
-    width: 320px;
+    width: 328px;
+  }
+  .product > .product-card-title {
+    width: 150px;
+    word-spacing: 20px;
+  }
+  .product-card-title {
+    width: 220px;
+    font-size: 19px;
+  }
+  .product-description {
+    width: 300px;
+    font-size: 14px;
+  }
+  .product-price {
+    font-size: 50px;
+  }
+  .product-price:after {
+    font-size: 26px;
   }
 }
 @media (min-width: 992px) {
-  .products-cards {
-    flex-wrap: nowrap;
-  }
   .products-cards .product {
-    width: 320px;
+    width: 287px;
+  }
+  .product-description {
+    width: 180px;
+    font-size: 18px;
+  }
+  .product-card-title {
+    width: 220px;
+    font-size: 25px;
   }
 }
 @media (min-width: 1200px) {
@@ -346,8 +393,14 @@ footer {
     width: 350px;
     flex-wrap: nowrap;
   }
-  h3 {
-    width: 150px;
+  .menu {
+    display: block;
+  }
+  .product-card-title {
+    width: 200px;
+  }
+  .product-description {
+    width: 250px;
   }
 }
 @media (min-width: 1514px) {
@@ -355,4 +408,13 @@ footer {
     width: 450px;
     flex-wrap: nowrap;
   }
+  .eset.logo {
+    display: inline-block;
+  }
+}
+.phone-number {
+  display: none;
+}
+.eset.logo {
+  display: none;
 }
