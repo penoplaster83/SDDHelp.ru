@@ -1,10 +1,10 @@
 // VAR
-@blue: rgb(57, 138, 230);
-@dark-blue: rgb(29, 64, 129);
-@grass: rgb(159, 202, 78);
+$blue: rgb(57, 138, 230);
+$dark-blue: rgb(29, 64, 129);
+$grass: rgb(159, 202, 78);
 
-@product-card-width: 90%;
-@product-card-height: 600px;
+$product-card-width: 90%;
+$product-card-height: 600px;
 
 .brdr{
   border: 1px solid black;
@@ -19,7 +19,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
-  .regular-font
+  @include regular-font;
 }
 
 
@@ -128,7 +128,7 @@ header:hover {
   display: inline-block;
   list-style-type: none;
   padding: 16px;
-  .regular-font;
+  @include regular-font;
   font-weight: 500;
   margin-right: auto;
 }
@@ -146,16 +146,16 @@ header:hover {
   padding-left: 22px;
   padding-right: 22px;
 
-  .bold-font;
+  @include bold-font;
   color: white;
-  background-color: @blue;
+  background-color: $blue;
   text-transform: uppercase;
 
   transition: ease-in 0.15s;
 }
 
 .submit:hover {
-  background-color: darken(@blue, 15%);
+  background-color: darken($blue, 15%);
   transition: ease-out 0.15s;
 }
 
@@ -173,7 +173,7 @@ header:hover {
   margin-right: 5px;
   font-size: 18px;
 
-  .bold-font;
+  @include bold-font;
   color: rgb(46, 46, 46);
 }
 
@@ -199,7 +199,7 @@ header:hover {
   flex-direction: column;
 }
 .product-2 {
-  border: 2px solid @blue;
+  border: 2px solid $blue;
 }
 // .product {
 //   display: flex;
@@ -224,7 +224,7 @@ header:hover {
 
   margin: 10px 15px 50px;
   
-  width: @product-card-width;
+  width: $product-card-width;
   height: 580px;
 
   background-color: rgba(247, 247, 247, 1);
@@ -244,7 +244,7 @@ header:hover {
 }
 
 .products-title {
-  .bold-font;
+  @include bold-font;
   margin-top: 130px;
   font-size: 40px;
   margin-bottom: 23px;
@@ -264,7 +264,7 @@ hr {
   font-size: 32px;
   margin-top: 40px;
   margin-bottom: -10px;
-  .thin-font
+  @include thin-font
 }
 
 .product-price:after {
@@ -275,20 +275,20 @@ hr {
 }
 
 .product > .product-card-title {
-  .bold-font;
+  @include bold-font;
   width: 150px;
   word-spacing: 20px;
   font-weight: bold;
   font-size: 18px;
   text-align: center;
   margin-top: 30px;
-  .brdr
+  @include brdr
 }
 
 .product-description {
   max-width: 75%;
   display: block;
-  .regular-font;
+  @include regular-font;
   font-size: 15px;
 }
 
@@ -350,21 +350,21 @@ input[type="button"]:active {
   transition: ease-out 0.14s;
 
   font-weight: bold;
-  .regular-font;
+  @include regular-font;
   text-transform: uppercase;
   font-size: 12px;
 }
 
 .learn-more:active {
   background: darken(white, 13%);
-  border: darken(@dark-blue, 10%) 2px solid;
-  color: darken(@dark-blue, 7%);
+  border: darken($dark-blue, 10%) 2px solid;
+  color: darken($dark-blue, 7%);
   font-weight: bold;
 }
 
 .learn-more:hover {
-  background: darken(@dark-blue, 10%);
-  border: darken(@dark-blue, 10%) 2px solid;
+  background: darken($dark-blue, 10%);
+  border: darken($dark-blue, 10%) 2px solid;
   color: white;
 }
 
@@ -383,7 +383,7 @@ input[type="button"]:active {
 
   border-radius: 40px;
   color: white;
-  .bold-font;
+  @include bold-font;
   text-transform: uppercase;
   font-size: 14px;
 }
@@ -403,16 +403,38 @@ input[type="button"]:active {
 }
 
 .special {
-  .product .product-sticker;
-  background-color: @blue;
+  height: 25px;
+
+  margin-top: -17px;
+  // margin-bottom: 1px;
+  padding: 8px 16px 1px 16px;
+
+  border-radius: 40px;
+  color: white;
+  @include bold-font;
+  text-transform: uppercase;
+  font-size: 14px;
+
+  background-color: $blue;
   margin-top: -22px;
   margin-bottom: -25px;
   width: 90px;
 }
 
 .new {
-  .product .product-sticker;
-  background-color: @grass;
+  height: 25px;
+
+  margin-top: -17px;
+  padding: 8px 16px 1px 16px;
+
+  border-radius: 40px;
+  color: white;
+  @include bold-font;
+  text-transform: uppercase;
+  font-size: 14px;
+
+
+  background-color: $grass;
   margin-top: -26px;
   width: 50px;
 }
