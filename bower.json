@@ -1,0 +1,21 @@
+{
+  "name": "sddhelp.ru",
+  "description": "kek",
+  "main": "index.js",
+  "authors": [
+    "da.simonov"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/penoplaster83/SDDHelp.ru",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "*"
+  }
+}
