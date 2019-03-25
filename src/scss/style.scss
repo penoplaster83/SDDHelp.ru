@@ -1,4 +1,5 @@
 @import "./partial/header-media.scss";
+@import "./partial/fonts-mixins.scss";
 
 // VAR
 $blue: rgb(57, 138, 230);
@@ -10,56 +11,6 @@ $product-card-height: 600px;
 
 .brdr{
   border: 1px solid black;
-}
-
-//--------------------------------------------
-//  ШРИФТЫ
-//--------------------------------------------
-
-@font-face {
-  font-family: 'BeauSans Bold';
-  src: url('/src/fonts/PFBeauSansPro-Bold.eot');
-  src: local('PFBeauSansPro-Bold'),
-    url('/src/fonts/PFBeauSansPro-Bold.eot?#iefix') format('embedded-opentype'),
-    url('/src/fonts/PFBeauSansPro-Bold.woff') format('woff'),
-    url('/src/fonts/PFBeauSansPro-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'BeauSans Thin';
-  src: url('/src/fonts/PFBeauSansPro-Thin.eot');
-  src: local('PFBeauSansPro-Thin'),
-    url('/src/fonts/PFBeauSansPro-Thin.eot?#iefix') format('embedded-opentype'),
-    url('/src/fonts/PFBeauSansPro-Thin.woff') format('woff'),
-    url('/src/fonts/PFBeauSansPro-Thin.ttf') format('truetype');
-  // font-weight: thin;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'BeauSans Regular';
-  src: url('/src/fonts/PFBeauSansPro-Regular.eot');
-  src: local('PFBeauSansPro-Regular'),
-    url('/src/fonts/PFBeauSansPro-Regular.eot?#iefix') format('embedded-opentype'),
-    url('/src/fonts/PFBeauSansPro-Regular.woff') format('woff'),
-    url('/src/fonts/PFBeauSansPro-Regular.ttf') format('truetype');
-  // font-weight: thin;
-  font-style: normal;
-}
-
-@mixin bold-font {
-  font-family: 'BeauSans Bold';
-  font-weight: bold;
-  font-style: normal;
-}
-@mixin thin-font {
-  font-family: 'BeauSans Thin';
-  font-weight: 150;
-  font-style: thin;
-}
-@mixin regular-font {
-  font-family: 'BeauSans Regular';
-  font-style: normal;
 }
 
 body {
@@ -74,9 +25,8 @@ body {
   @include regular-font;
 }
 
-
 //--------------------------------------------
-//  HEADER
+// HEADER
 //--------------------------------------------
 
 header {
@@ -178,8 +128,6 @@ header:hover {
   color: rgb(46, 46, 46);
 }
 
-
-
 //--------------------------------------------
 // ПРОДУКТЫ
 //--------------------------------------------
@@ -202,21 +150,7 @@ header:hover {
 .product-2 {
   border: 2px solid $blue;
 }
-// .product {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
 
-//   margin: 10px 15px 50px;
-  
-//   width: @product-card-width;
-//   height: 580px;
-
-//   background-color: rgba(247, 247, 247, 1);
-//   border-radius: 8px;
-//   box-shadow: rgba(50, 50, 50, 0.23) 0px 3px 12px 1px;
-//   transition: ease-in transform 0.20s, margin 0.32s, box-shadow 0.25s;
-// }
 
 .product {
   display: flex;
@@ -233,7 +167,6 @@ header:hover {
   box-shadow: rgba(50, 50, 50, 0.23) 0px 3px 12px 1px;
   transition: ease-in transform 0.20s, margin 0.32s, box-shadow 0.25s;
 }
-
 
 .product:hover {
   background-color: white;

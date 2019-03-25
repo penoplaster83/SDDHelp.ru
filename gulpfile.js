@@ -1,13 +1,7 @@
-'use strict'
 
-// gulp.task("default", function () {
-//   return gulp.src("app/js/*.js")
-//     .pipe(babel())
-//     .pipe(gulp.dest("dist"));
-// });
-
-var gulp = require('gulp'),
-    watch = require('gulp-watch'),
+const { src, dest, parallel, series } = require('gulp');
+const gulp = require('gulp'),
+    // watch = require('gulp-watch'),
     prefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
@@ -18,17 +12,18 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
-    reload = browserSync.reload;
 
+    reload = browserSync.reload;
     sass.compiler = require('node-sass');
 
-var path = {
+const path = {
   build: { //Тут мы укажем куда складывать готовые после сборки файлы
     html: 'build/',
     js: 'build/js/',
     css: 'build/css/',
     img: 'build/img',
-    fonts: 'build/fonts/'
+    fonts: 'build/fonts/',
+    svg: 'build/svg/'
   },
 
   src: { // исходники
@@ -36,15 +31,17 @@ var path = {
     js: 'src/js/main.js',
     style: 'src/scss/*.scss',
     img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-    fonts: 'src/fonts/**/*.*'
+    fonts: 'src/fonts/**/*.*',
+    svg: 'src/svg/**/*.*'
 },
 
 watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
-    html: 'src/**/*.html',
+    html: '/src/**/*.html',
     js: 'src/js/**/*.js',
     style: 'src/scss/**/*.scss',
     img: 'src/img/**/*.*',
-    fonts: 'src/fonts/**/*.*'
+    fonts: 'src/fonts/**/*.*',
+    svg: 'src/svg/**/*.*'
 },
 clean: './build'
 };
@@ -59,14 +56,14 @@ var config = {
   logPrefix: "Frontend_Devil"
 };
 
-gulp.task('html:build', function () {
+function html_task() {
   return gulp.src(path.src.html)
     .pipe(rigger())
     .pipe(gulp.dest(path.build.html))
     .pipe(reload({stream: true}));
-});
+};
 
-gulp.task('style:build', function () {
+function style_task() {
   return gulp.src(path.src.style) //Выберем наш style.scss
       .pipe(sourcemaps.init()) //То же самое что и с js
       .pipe(sass()) //Скомпилируем
@@ -75,4 +72,79 @@ gulp.task('style:build', function () {
       .pipe(sourcemaps.write())
       .pipe(gulp.dest(path.build.css)) //И в build
       .pipe(reload({stream: true}));
+};
+
+function image_task() {
+  return gulp.src(path.src.img) //Выберем наши картинки
+      .pipe(imagemin({ //Сожмем их
+          progressive: true,
+          svgoPlugins: [{removeViewBox: false}],
+          use: [pngquant()],
+          interlaced: true
+      }))
+      .pipe(gulp.dest(path.build.img)) //И бросим в build
+      .pipe(reload({stream: true}));
+};
+
+function fonts_task() {
+  return gulp.src(path.src.fonts)
+      .pipe(gulp.dest(path.build.fonts))
+};
+
+function svg_task() {
+  return gulp.src(path.src.svg)
+      .pipe(gulp.dest(path.build.svg))
+};
+
+gulp.task('html-t', html_task);
+gulp.task('style-t', style_task);
+gulp.task('image-t', image_task);
+gulp.task('svg-t', svg_task);
+gulp.task('fonts-t', fonts_task);
+
+gulp.task('build',
+  gulp.series(
+    html_task, 
+    style_task, 
+    image_task,
+    svg_task,
+    fonts_task)
+  );
+
+  gulp.task('webserver', function () {
+    browserSync(config);
+  });
+
+// function watch_task(){
+//   watch([path.watch.html], function(event, cb) {
+//       gulp.start('html-t');
+//   });
+//   watch([path.watch.style], function(event, cb) {
+//     gulp.start('style-t');
+//   });
+//   // watch([path.watch.js], function(event, cb) {
+//   //     gulp.start('js-t');
+//   // });
+//   watch([path.watch.img], function(event, cb) {
+//     gulp.start('image-t');
+//   });
+//   watch([path.watch.fonts], function(event, cb) {
+//     gulp.start('fonts-t');
+//   });
+// };
+
+// watch(path.watch.html, style_task);
+// gulp.task('default', gulp.series (watch, gulp.parallel(styles, scripts, images),
+
+//     function (done) { done(); }    
+// ));
+
+// gulp.task('default',gulp.series(
+//   gulp.parallel(html_task,style_task),
+//   'watch'
+// ))
+
+gulp.task('watch', function() {
+  gulp.watch('path.watch.html', html_task);
 });
+

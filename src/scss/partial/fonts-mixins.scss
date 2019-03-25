@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'BeauSans Bold';
+    src: url('/../fonts/PFBeauSansPro-Bold.eot');
+    src: local('PFBeauSansPro-Bold'),
+      url('/../fonts/PFBeauSansPro-Bold.eot?#iefix') format('embedded-opentype'),
+      url('/../fonts/PFBeauSansPro-Bold.woff') format('woff'),
+      url('/../fonts/PFBeauSansPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'BeauSans Thin';
+    src: url('/../fonts/PFBeauSansPro-Thin.eot');
+    src: local('PFBeauSansPro-Thin'),
+      url('/../fonts/PFBeauSansPro-Thin.eot?#iefix') format('embedded-opentype'),
+      url('/../fonts/PFBeauSansPro-Thin.woff') format('woff'),
+      url('/../fonts/PFBeauSansPro-Thin.ttf') format('truetype');
+    // font-weight: thin;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'BeauSans Regular';
+    src: url('/../fonts/PFBeauSansPro-Regular.eot');
+    src: local('PFBeauSansPro-Regular'),
+      url('/../fonts/PFBeauSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+      url('/../fonts/PFBeauSansPro-Regular.woff') format('woff'),
+      url('/../fonts/PFBeauSansPro-Regular.ttf') format('truetype');
+    // font-weight: thin;
+    font-style: normal;
+  }
+  
+  @mixin bold-font {
+    font-family: 'BeauSans Bold';
+    font-weight: bold;
+    font-style: normal;
+  }
+  @mixin thin-font {
+    font-family: 'BeauSans Thin';
+    font-weight: 150;
+    font-style: thin;
+  }
+  @mixin regular-font {
+    font-family: 'BeauSans Regular';
+    font-style: normal;
+  }

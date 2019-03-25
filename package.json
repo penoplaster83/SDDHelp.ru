@@ -18,6 +18,7 @@
   "homepage": "https://github.com/penoplaster83/SDDHelp.ru#readme",
   "devDependencies": {
     "@babel/core": "^7.4.0",
+    "eslint": "^5.15.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0-beta.2"
