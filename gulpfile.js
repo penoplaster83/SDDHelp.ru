@@ -11,7 +11,7 @@ const gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
-    browserSync = require("browser-sync"),
+    browserSync = require("browser-sync").create(),
 
     reload = browserSync.reload;
     sass.compiler = require('node-sass');
@@ -36,7 +36,7 @@ const path = {
 },
 
 watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
-    html: '/src/**/*.html',
+    html: 'src/html/index.html',
     js: 'src/js/**/*.js',
     style: 'src/scss/**/*.scss',
     img: 'src/img/**/*.*',
@@ -111,8 +111,27 @@ gulp.task('build',
     fonts_task)
   );
 
-  gulp.task('webserver', function () {
-    browserSync(config);
+  // gulp.task('serve', function () {
+  //   browserSync(config);
+  // });
+
+  // {
+  //   server: {
+  //       baseDir: "./build"
+  //   },
+  //   tunnel: true,
+  //   host: 'localhost',
+  //   port: 9000,
+  //   logPrefix: "Frontend_Devil"
+  // };
+
+  gulp.task('serve', function() {
+    browserSync.init({
+      server: "build",
+      // tunnel: true
+    });
+
+    browserSync.watch('build/**/*.*').on('change', browserSync.reload);
   });
 
 // function watch_task(){
@@ -145,6 +164,11 @@ gulp.task('build',
 // ))
 
 gulp.task('watch', function() {
-  gulp.watch('path.watch.html', html_task);
+  gulp.watch(path.watch.html, gulp.series(html_task, reload));
+  gulp.watch(path.watch.style, gulp.series(style_task, reload))
 });
 
+gulp.task('default', gulp.series(
+  gulp.series(html_task, style_task, image_task,svg_task,fonts_task),
+  gulp.parallel('watch', 'serve')
+));
