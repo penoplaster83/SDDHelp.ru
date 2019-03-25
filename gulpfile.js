@@ -20,6 +20,8 @@ var gulp = require('gulp'),
     browserSync = require("browser-sync"),
     reload = browserSync.reload;
 
+    sass.compiler = require('node-sass');
+
 var path = {
   build: { //Тут мы укажем куда складывать готовые после сборки файлы
     html: 'build/',
@@ -32,7 +34,7 @@ var path = {
   src: { // исходники
     html: 'src/html/*.html', 
     js: 'src/js/main.js',
-    style: 'src/style/main.scss',
+    style: 'src/scss/*.scss',
     img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
     fonts: 'src/fonts/**/*.*'
 },
@@ -40,7 +42,7 @@ var path = {
 watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
     html: 'src/**/*.html',
     js: 'src/js/**/*.js',
-    style: 'src/style/**/*.scss',
+    style: 'src/scss/**/*.scss',
     img: 'src/img/**/*.*',
     fonts: 'src/fonts/**/*.*'
 },
@@ -65,7 +67,7 @@ gulp.task('html:build', function () {
 });
 
 gulp.task('style:build', function () {
-  gulp.src(path.src.style) //Выберем наш main.scss
+  return gulp.src(path.src.style) //Выберем наш style.scss
       .pipe(sourcemaps.init()) //То же самое что и с js
       .pipe(sass()) //Скомпилируем
       .pipe(prefixer()) //Добавим вендорные префиксы
