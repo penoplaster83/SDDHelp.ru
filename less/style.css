@@ -200,7 +200,6 @@ hr {
   font-size: 18px;
   text-align: center;
   margin-top: 30px;
-  border: 1px solid black;
 }
 .product-description {
   max-width: 75%;
@@ -383,9 +382,10 @@ footer {
     width: 180px;
     font-size: 18px;
   }
-  .product-card-title {
-    width: 220px;
-    font-size: 25px;
+  .product > .product-card-title {
+    width: 180px;
+    font-size: 22px;
+    border: 1px solid black;
   }
 }
 @media (min-width: 1200px) {
