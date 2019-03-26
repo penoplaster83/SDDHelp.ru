@@ -108,17 +108,17 @@ gulp.task('scss:build', function(done) {
 // });
 
 // сбор js
-// gulp.task('jsmain:build', function(done) {
-//     gulp.src(path.src.jsmain) // получим файл main.js
-//         .pipe(plumber()) // для отслеживания ошибок
-//         .pipe(rigger()) // импортируем все указанные файлы в main.js
-//         .pipe(sourcemaps.init()) //инициализируем sourcemap
-//         .pipe(uglify()) // минимизируем js
-//         .pipe(sourcemaps.write('./')) //  записываем sourcemap
-//         .pipe(gulp.dest(path.build.jsmain)) // положим готовый файл
-//         .pipe(browserSync.reload({ stream: true })); // перезагрузим сервер
-//     done();
-// });
+gulp.task('jsmain:build', function(done) {
+    gulp.src(path.src.jsmain) // получим файл main.js
+        .pipe(plumber()) // для отслеживания ошибок
+        .pipe(rigger()) // импортируем все указанные файлы в main.js
+        .pipe(sourcemaps.init()) //инициализируем sourcemap
+        .pipe(uglify()) // минимизируем js
+        .pipe(sourcemaps.write('./')) //  записываем sourcemap
+        .pipe(gulp.dest(path.build.jsmain)) // положим готовый файл
+        .pipe(browserSync.reload({ stream: true })); // перезагрузим сервер
+    done();
+});
 
 // gulp.task('js:build', function(done) {
 //     gulp.src([path.src.js, '!src/js/main.js'])
@@ -167,7 +167,7 @@ gulp.task('cache:clear', function(done) {
 //     done();
 // }));
 // сборка
-gulp.task('build', gulp.series('html:build', 'scss:build', 'fonts:build', 'image:build', function(done) {
+gulp.task('build', gulp.series('html:build', 'scss:build', 'jsmain:build', 'fonts:build', 'image:build', function(done) {
     done();
 }));
 
@@ -180,7 +180,7 @@ gulp.task('watch', function(done) {
     // gulp.watch(path.watch.js, gulp.series('js:build'));
     gulp.watch(path.watch.img, gulp.series('image:build'));
     gulp.watch(path.watch.fonts, gulp.series('fonts:build'));
-    // gulp.watch(path.watch.jsmain, gulp.series('jsmain:build'));
+    gulp.watch(path.watch.jsmain, gulp.series('jsmain:build'));
     done();
 });
 
