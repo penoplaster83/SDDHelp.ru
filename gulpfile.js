@@ -30,7 +30,7 @@ var path = {
         fonts: 'src/fonts/**/*.*'
     },
     watch: {
-        html: 'src/html/index.html',
+        html: 'src/html/**/*.html',
         js: 'src/js/*.js',
         jsmain: 'src/js/main.js',
         scss: 'src/scss/*.scss',
@@ -65,6 +65,7 @@ gulp.task('browserSync', function() {
     browserSync.init({
         server: "build",
         index: "/html/index.html"
+        // port: 3000
     });
     return browserSync.watch('build/**/*.*').on('change', browserSync.reload);
     // done();

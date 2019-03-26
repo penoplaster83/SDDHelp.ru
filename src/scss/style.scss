@@ -1,5 +1,7 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "./partial/header-media.scss";
 @import "./partial/fonts-mixins.scss";
+
 
 // VAR
 $blue: rgb(57, 138, 230);
@@ -314,7 +316,7 @@ input[type="button"]:active {
 //--------------------------------------------
 .product .product-sticker {
 
-  height: 25px;
+  height: 35px;
 
   margin-top: -17px;
   // margin-bottom: 1px;
@@ -357,7 +359,7 @@ input[type="button"]:active {
   background-color: $blue;
   margin-top: -22px;
   margin-bottom: -25px;
-  width: 90px;
+  // width: 90px;
 }
 
 .new {
@@ -375,7 +377,7 @@ input[type="button"]:active {
 
   background-color: $grass;
   margin-top: -26px;
-  width: 50px;
+  // width: 50px;
 }
 
 img[type="svg"] {
@@ -497,10 +499,11 @@ footer {
   }
 }
 
+.eset.logo {
+  display: none;
+}
+
 .phone-number {
   display: none;
 }
 
-.eset.logo {
-  display: none;
-}
