@@ -2,9 +2,11 @@
 
 var config = {
     server: {
-        baseDir: './build'
+        baseDir: 'build',
+        index: "/html/index.html"
     }
-    //, tunnel: true,
+    ,
+    tunnel: true
     // host: 'localhost',
     // open: 'external',
     // port: 3000,
@@ -62,12 +64,8 @@ var gulp = require("gulp"),
 
 // запуск сервера +
 gulp.task('browserSync', function() {
-    browserSync.init({
-        server: "build",
-        index: "/html/index.html"
-        // port: 3000
-    });
-    return browserSync.watch('build/**/*.*').on('change', browserSync.reload);
+    browserSync.init(config);
+    // return browserSync.watch('build/**/*.*').on('change', browserSync.reload);
     // done();
 });
 
