@@ -9,12 +9,12 @@ $grass: rgb(159, 202, 78);
 $product-card-width: 90%;
 $product-card-height: 600px;
 
-.brdr{
+.brdr {
   border: 1px solid black;
 }
 
 body {
-  background: #805858;
+  background: #5f5f5f;
   height: auto;
   margin: 0;
   padding: 0;
@@ -24,6 +24,8 @@ body {
   text-align: center;
   @include regular-font;
 }
+
+
 
 //--------------------------------------------
 //  HEADER
@@ -47,6 +49,7 @@ header {
   box-shadow: rgba(50, 50, 50, 0.10) 0px 2px 10px 1px;
   transition: ease-in-out box-shadow 0.25s;
 }
+
 header:hover {
   box-shadow: rgba(50, 50, 50, 0.24) 0px 3px 26px 2px;
 }
@@ -141,12 +144,14 @@ header:hover {
   padding-top: 20px;
   padding-bottom: 80px;
 }
+
 .products-cards {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
+
 .product-2 {
   border: 2px solid $blue;
 }
@@ -158,7 +163,7 @@ header:hover {
   justify-content: flex-end;
 
   margin: 10px 15px 50px;
-  
+
   width: $product-card-width;
   height: 580px;
 
@@ -173,7 +178,7 @@ header:hover {
   transform: scale(1.022, 1.022) translate(0, -20px);
   box-shadow: rgba(50, 50, 50, 0.20) 0px 12px 30px 2px;
   position: relative;
-  
+
   transition: ease-out transform 0.18s, margin 0.29s, box-shadow 0.20s;
 }
 
@@ -208,7 +213,7 @@ hr {
   // white-space: 1px;
 }
 
-.product > .product-card-title {
+.product>.product-card-title {
   @include bold-font;
   width: 150px;
   word-spacing: 20px;
@@ -308,7 +313,7 @@ input[type="button"]:active {
 // ПЛАШКИ
 //--------------------------------------------
 .product .product-sticker {
-    
+
   height: 25px;
 
   margin-top: -17px;
@@ -380,7 +385,7 @@ img[type="svg"] {
 }
 
 
-footer{
+footer {
   display: flex;
   height: 250px;
   // background-color: rgb(190, 190, 190);
@@ -395,7 +400,10 @@ footer{
     width: 510px;
     // background-color: rgb(230, 228, 150);
   }
-  .menu{display: none;}
+
+  .menu {
+    display: none;
+  }
 
 }
 
@@ -404,26 +412,28 @@ footer{
     flex-direction: row;
     flex-wrap: wrap;
   }
-  
-  .menu-mobile{display: block;}
+
+  .menu-mobile {
+    display: block;
+  }
 
   .products-cards .product {
     width: 328px;
     // background-color: rgb(165, 172, 182);
   }
 
-  .product > .product-card-title{
+  .product>.product-card-title {
     width: 150px;
     word-spacing: 20px;
-    
+
   }
 
-  .product-card-title{
+  .product-card-title {
     width: 220px;
     font-size: 19px;
   }
 
-  .product-description{
+  .product-description {
     width: 300px;
     font-size: 14px;
   }
@@ -443,18 +453,18 @@ footer{
     width: 287px;
   }
 
-  .product-description{
+  .product-description {
     width: 180px;
     font-size: 18px;
   }
 
-  .product > .product-card-title{
+  .product>.product-card-title {
     width: 180px;
     font-size: 22px;
     // @include brdr
   }
 
-  
+
 }
 
 @media (min-width: 1200px) {
@@ -462,13 +472,16 @@ footer{
     width: 350px;
     flex-wrap: nowrap;
   }
-  .menu{display: block;}
+
+  .menu {
+    display: block;
+  }
 
   .product-card-title {
     width: 200px;
   }
 
-  .product-description{
+  .product-description {
     width: 250px;
   }
 }
@@ -478,8 +491,16 @@ footer{
     width: 450px;
     flex-wrap: nowrap;
   }
-  .eset.logo{display: inline-block;}
+
+  .eset.logo {
+    display: inline-block;
+  }
 }
 
-.phone-number{display: none;}
-.eset.logo{display: none;}
+.phone-number {
+  display: none;
+}
+
+.eset.logo {
+  display: none;
+}
