@@ -46,6 +46,7 @@
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-pngquant": "^7.0.0",
     "node-sass": "^4.11.0",
+    "popper": "^1.0.1",
     "rimraf": "^2.6.3"
   }
 }
