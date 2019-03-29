@@ -453,6 +453,7 @@ footer {
 @media (min-width: 992px) {
   .products-cards .product {
     width: 287px;
+
   }
 
   .product-description {
@@ -511,3 +512,16 @@ footer {
   color:red;
 }
 
+body .modal-dialog #test-style{
+  box-sizing: border-box;
+  // width: 1200px;
+
+}
+
+// .modal-md {
+//   width: 1000px;
+// }
+// .modal-content {
+//   width: 1000px;
+//   // margin: auto;
+// }
